@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Imagen binaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Generador de imagen fractal</h1>
+      <br>
+      <h3> Introduza las coordenadas x1, y1, x2, y2, la anchura en pixeles y el número de iteraciones para generar su imagen. </h3>
+      <br>
+      <form action="/pinta_mandelbrot" method="GET">
+          <div>
+              <label for="x1">Coordenada x1:</label>
+              <input type="number" name="x1" value = "-1"/>
+          </div>
+          <div>
+              <label for="x2">Coordenada x2:</label>
+              <input type="number" name="x2" value = "1"/>
+          </div>
+          <br>
+          <div>
+              <label for="y1">Coordenada y1:</label>
+              <input type="number" name="y1" value = "-1"/>
+          </div>
+          <div>
+              <label for="y2">Coordenada y2:</label>
+              <input type="number" name="y2" value = "1"/>
+          </div>
+          <br>
+          <div>
+              <label for="anchura">Anchura(px):</label>
+              <input type="number" name="anchura" value = "300"/>
+          </div>
+          <div>
+              <label for="iteraciones">Iteraciones:</label>
+              <input type="number" name="iteraciones" value = "100"/>
+          </div>
+          <br>
+
+          <div class="button">
+              <br>
+              <button type="submit">Generar mandelbrot</button>
+          </div>
+      </form>
+
+
+    </div>
+  </body>
+</html>
