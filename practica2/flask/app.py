@@ -60,9 +60,9 @@ def pintaFractal():
 # PARA NOTA 2 - IMAGEN VECTORIAL
 
 @app.route('/svg/')
-def show_svg():
+def pintaSVG():
     rnd_list = [str(random.randint(1,100)) for x in range(17)]
-    color_list = ["black","blue","yellow","gold","lawngreen","royalblue","chocolate","slategrey","plum","peru","lightpink"]
+    color_list = ["black","blue","yellow","gold","lawngreen","royalblue","chocolate","slategrey","plum","peru","lightpink","red","mediumblue","peachpuff","salmon"]
 
     random.shuffle(color_list)
     rectangle = '<rect x="{}%" y="{}%" width="{}%" height="{}%" stroke="{}" stroke-width="5" style="fill:{}" />'.format(*rnd_list[0:4],color_list[0],color_list[1])
