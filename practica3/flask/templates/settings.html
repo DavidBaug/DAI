@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="" style="padding-bottom: 10em;margin: 10em;">
+    <h2>Modificar datos de usuario</h2>
+    <div id  = "iniciar_sesion" >
+        <form action = "usuario" method = "POST">
+         <label>Usuario <input type="text" name="user" value={{datos[0]}}></label>
+         <br><br>
+         <label>Contraseña <input type="password" name="pass" value={{datos[1]}}></label>
+         <br><br>
+         <button class="items" type="submit" name="login" formaction="modify" style="font-size: 12px;">Modificar</button>
+         <button class="items" type="submit" name="login" formaction="delete" style="font-size: 12px; background-color: red;color: white;">Eliminar</button>
+      </form>
+      </div>
+  </div>
+
+{% endblock %}

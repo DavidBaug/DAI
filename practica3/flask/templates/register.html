@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div id="login" style="padding-bottom: 10em;margin: 10em;">
+    <h2>Registrarse</h2>
+      <div id  = "registrar">
+				<form method="post" style="float: left;padding: 0%;text-align-last: center;margin-top: 25px;"  action="registrar">
+	            <input id="user" class="items" type="text" name="user" value="" placeholder="Usuario" required="" style="
+	          font-size: 12px;
+	      "><br><br>
+	            <input id="pass" class="items" type="password" name="pass" value="" placeholder="Contraseña" required="" style="
+	          font-size: 12px;
+	      "><br><br>
+	            <button class="items" type="submit" name="login" formaction="registrar" style="
+	          font-size: 12px;
+	      ">Registrar</button>
+	            <br>
+
+	        </form>
+      </div>
+    {% if error %}
+      <div class = "error">
+        {{ error }}
+      </div>
+    {%endif%}
+  </div>
+{% endblock %}
