@@ -6,9 +6,17 @@ from pickleshare import *
 import math
 
 app = Flask(__name__)
-app.secret_key='Clave de sesión'
+app.secret_key='clavesita'
 
 num_pages = 0
+
+def render_page(page):
+	if 'username' in session:
+		user=session['username']
+		historial =  add_page(page)
+		return render_template(page, user = user, historial = historial)
+	else :
+		return render_template(page)
 
 def add_page(page):
 	global num_pages
@@ -20,24 +28,16 @@ def add_page(page):
 
 	if(num_pages > 1):
 		for i in range(num_pages-1, 0, -1):
-			a = "histo" + str(i - 1)
-			b = "histo" + str(i)
+			a = "historial{}".format(str(i - 1))
+			b = "historial{}".format(str(i))
 			session[b] = session[a]
 			historial[i] = session[b]
-			print(session[b])
 
-	session["histo0"] = page
+	session["historial0"] = page
 	historial[0] = page
 
 	return historial
 
-def render_page(page):
-	if 'username' in session:
-		user=session['username']
-		historial =  add_page(page)
-		return render_template(page, user = user, historial = historial)
-	else :
-		return render_template(page)
 
 ###############################
 
@@ -117,8 +117,8 @@ def logout():
 	global num_pages
 	if(num_pages > 0):
 		for i in range(0, num_pages+1):
-			aux = "histo" + str(i)
-			session.pop(aux, None)
+			a = "historial{}".format(str(i))
+			session.pop(a, None)
 
 	num_pages = 0;
 	return render_template("index.html")
@@ -194,8 +194,8 @@ def delete():
 		global num_pages
 		if(num_pages > 0):
 			for i in range(0, num_pages+1):
-				aux = "histo" + str(i)
-				session.pop(aux, None)
+				a = "historial{}".format(str(i))
+				session.pop(a, None)
 
 		num_pages = 0;
 		return render_template("index.html")
