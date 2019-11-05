@@ -73,12 +73,17 @@ def login():
 
 		db = PickleShareDB('DB')
 
-		# Existe usuario y coincide contrasenia
-		if db[user] and password == db[user]["passw"]:
-			session['username']= user
-			return render_template("index.html", user = user)
-		else:
-			return render_template('index.html', error = "Contraseña incorrecta")
+
+		try:
+			# Existe usuario y coincide contrasenia
+			if db[user]:
+				if password == db[user]["passw"]:
+					session['username']= user
+					return render_template("index.html", user = user)
+				else:
+					return render_template('index.html', error = "Usuario o contraseña incorrecta")
+		except Exception as e:
+			return render_template('index.html', error = "Usuario o contraseña incorrectos")
 
 	else:
 		# Sesión ya iniciada
@@ -92,8 +97,8 @@ def login():
 def index():
     return render_page("index.html")
 
-@app.route('/registrar.html', methods = ['POST','GET'])
-@app.route('/registrar', methods = ['POST','GET'])
+@app.route('/register.html', methods = ['POST','GET'])
+@app.route('/register', methods = ['POST','GET'])
 def register():
 	# Petición registro
 	if request.method == 'POST':
@@ -105,7 +110,7 @@ def register():
 
 		return render_template('index.html', user = user)
 	else:
-		return render_page('registrar.html')
+		return render_page('register.html')
 
 
 @app.route('/logout.html')

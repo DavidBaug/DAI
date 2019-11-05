@@ -68,9 +68,17 @@
           font-size: 12px;
           margin-top: 11px;
           margin-bottom: 0;
-      ">Si no tienes cuenta puedes registrarte <a href="registrar.html">aquí</a></p>
+      ">Si no tienes cuenta puedes registrarte <a href="register">aquí</a></p>
         </form>
     {% endif %}
+
+    {% if error %}
+    <div class="">
+      <p>{{ error }}</p>
+    </div>
+
+    {%endif%}
+
   </header>
 
 <body>
