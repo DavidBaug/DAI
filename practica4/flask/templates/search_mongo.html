@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="" style="top: 6.5em;padding-bottom: 10em;margin: 10em;">
+  {% if search %}
+  	<div id="search">
+  		<p>Resultado de la búsqueda:</p>
+      {% for i in search %}
+  					<div>
+              <p><strong>Temporada:</strong> {{i.season}}</p>
+              <p><strong>Capítulo:</strong> {{i.number}}</p>
+              <p><strong>Nombre:</strong> {{i.name}}</p>
+              <p><strong>Duración:</strong> {{i.airtime}}</p>
+              <p><strong>Descripción:</strong> {{i.summary}}</p>
+            </div><br>
+      {%endfor%}
+  		<form action="mongo">
+  			<input type="submit" value="Volver" />
+  		</form>
+  	</div>
+  {% else %}
+  	<div class="mongo">
+  		<div id="search">
+  			<p>Búsqueda por temporada y capítulo:</p>
+  			<form action = "search_mongo" method = "POST">
+  			Temporada <br>
+        <input type="number" name="temporada"> <br>
+        Capitulo <br>
+        <input type="number" name="capitulo"> <br>
+        <br><br>
+  			<input type = "submit" value = "Buscar" />
+  			</form>
+  		</div>
+  	</div>
+  {% endif %}
+</div>
+{% endblock %}

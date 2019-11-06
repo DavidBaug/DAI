@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div id="colorlib-page" style="top: 6.5em;">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" style="padding-top: 3em; margin-top: 100px; height:90%;text-align: -webkit-center;" role="complementary">
+			<nav id="colorlib-main-menu" role="navigation">
+        <ul>
+          <li ><a href="index.html">Home</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li class="colorlib-active"><a href="contact.html">Contact</a></li>
+        </ul>
+			</nav>
+
+			<!-- <div class="colorlib-footer">
+				<h3>Newsletter</h3>
+				<div class="d-flex justify-content-center">
+					<form action="#" class="colorlib-subscribe-form">
+            <div class="form-group d-flex">
+            	<div class="icon"><span class="icon-paper-plane"></span></div>
+              <input type="text" class="form-control" placeholder="Enter Email Address">
+            </div>
+          </form>
+				</div>
+			</div> -->
+
+
+
+      <ul id="social_nav" class="colorlib-footer">
+        <div class="col-md-7 heading-section heading-section-2 text-center ftco-animate">
+          <h6>Follow me</h6>
+        </div>
+        <br>
+        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+        <li class="ftco-animate"><a href="https://www.instagram.com/baugph"><span class="icon-instagram"></span></a></li>
+
+      </ul>
+
+		</aside> <!-- END COLORLIB-ASIDE -->
+    <div id="colorlib-main">
+			<section class="ftco-section ftco-bread" style="
+    padding: 4em 0em 3em !important;
+">
+				<div class="container">
+					<div class="row no-gutters slider-text justify-content-center align-items-center">
+	          <div class="col-md-8 ftco-animate">
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Contact</span></p>
+	            <h1 class="bread">Contact</h1>
+	          </div>
+	        </div>
+				</div>
+			</section>
+			<section class="ftco-section contact-section">
+	      <div class="container">
+	        <div class="row d-flex mb-5 contact-info">
+	          <div class="col-md-12 mb-4">
+	            <h2 class="h3 font-weight-bold">Contact Information</h2>
+	          </div>
+	          <div class="w-100"></div>
+	          <div class="col-md-3 d-flex">
+	          	<div class="info bg-light p-4">
+		            <p><span>Address:</span> Granada, Spain</p>
+		          </div>
+	          </div>
+	          <div class="col-md-3 d-flex">
+	          	<div class="info bg-light p-4">
+		            <p><span>Phone:</span> <a href="tel://1234567920">+XX XXX XXX XXX</a></p>
+		          </div>
+	          </div>
+	          <div class="col-md-3 d-flex">
+	          	<div class="info bg-light p-4">
+		            <p><span>Email:</span> <a href="mailto:davidgilbautista@gmail.com">davidgilbautista@gmail.com</a></p>
+		          </div>
+	          </div>
+	        </div>
+
+	      </div>
+	    </section>
+  {% endblock %}

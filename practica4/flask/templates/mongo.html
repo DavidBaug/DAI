@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="mongo" style="top: 6.5em;padding-bottom: 10em;margin: 10em;">
+		<form name='form'>
+			<button class="items" type="submit" name="search" formaction="search_mongo" style="font-size: 12px;">Buscar</button>
+			<button class="items" type="submit" name="modify" formaction="modify_mongo" style="font-size: 12px;">Modificar</button>
+			<button class="items" type="submit" name="delete" formaction="delete_mongo" style="font-size: 12px;">Eliminar</button>
+		</form>
+	</div>
+{% endblock %}

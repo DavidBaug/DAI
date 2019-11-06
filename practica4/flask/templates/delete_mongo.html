@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="" style="top: 6.5em;padding-bottom: 10em;margin: 10em;">
+  {% if delete %}
+  	<form action="mongo">
+      Elemento borrado con éxito <br><br>
+  		<input type="submit" value="Volver" />
+  	</form>
+  {% else %}
+  	<div class="mongo">
+  		<div id="busqueda">
+  			<p>Eliminar</p>
+  			<form action = "delete_mongo" method = "POST">
+          Temporada <br>
+          <input type="number" name="temporada"> <br>
+          Capitulo <br>
+          <input type="number" name="capitulo"> <br>
+          <br><br>
+        <input type = "submit" value = "Eliminar" />
+  			</form>
+  		</div>
+  	</div>
+  {% endif %}
+</div>
+{% endblock %}
